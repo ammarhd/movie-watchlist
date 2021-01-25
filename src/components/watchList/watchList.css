@@ -1,6 +1,6 @@
 .imgSize {
-  height: 400px;
-  width: 280px;
+  height: 100%;
+  width: 100%;
   background-image: linear-gradient(
     to right bottom,
     #1d253d,
@@ -16,14 +16,40 @@
     #5a7ddd,
     #6488ee
   );
+}
 
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  z-index: 10;
+.noImg {
+  height: 400px !important;
+  width: 280px !important;
+  background-image: linear-gradient(
+    to right bottom,
+    #1d253d,
+    #212c4c,
+    #25345c,
+    #293b6c,
+    #2d437d,
+    #334b8c,
+    #38549b,
+    #3e5caa,
+    #4767bb,
+    #5172cb,
+    #5a7ddd,
+    #6488ee
+  );
+  text-align: center;
+  padding-top: 20%;
+  color: #ebecee;
+  font-size: 30px;
 }
 
 .image-container {
   position: relative;
   transition: transform 0.2s;
+  height: 400px !important;
+  width: 280px !important;
+  padding: 0% !important;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  z-index: 10;
 }
 
 .image-container:hover {
@@ -54,9 +80,4 @@
 
 .comment {
   font-size: 12px;
-}
-
-.watched-remove button {
-  width: 60px;
-  text-align: center;
 }

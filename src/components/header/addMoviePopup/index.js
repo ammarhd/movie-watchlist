@@ -1,13 +1,17 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { addMovieToWatchlist } from "../../../redux/actions";
+import { v4 } from "node-uuid";
 
 const AddMovie = (props) => {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = (data, e) => {
+    data.id = v4();
     console.log(data);
-
+    dispatch(addMovieToWatchlist(data));
     e.target.reset();
   };
 
