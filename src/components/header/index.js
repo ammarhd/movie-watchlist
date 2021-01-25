@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-
+import AddMovie from "./addMoviePopup";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [watchListButton, setWatchListButton] = useState("primary");
@@ -55,10 +55,11 @@ const Header = () => {
           </span>
         </div>
 
-        <div className="col mt-1">
-          <Button variant="contained" color="secondary" onClick={togglePopup}>
+        <div className=" col mt-1">
+          <Button variant="contained" id="addBtn" onClick={togglePopup}>
             + ADD
           </Button>
+          {isOpen && <AddMovie closePopup={togglePopup} />}
         </div>
       </div>
     </div>
