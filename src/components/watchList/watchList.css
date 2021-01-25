@@ -1,0 +1,62 @@
+.imgSize {
+  height: 400px;
+  width: 280px;
+  background-image: linear-gradient(
+    to right bottom,
+    #1d253d,
+    #212c4c,
+    #25345c,
+    #293b6c,
+    #2d437d,
+    #334b8c,
+    #38549b,
+    #3e5caa,
+    #4767bb,
+    #5172cb,
+    #5a7ddd,
+    #6488ee
+  );
+
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 100%;
+  height: 100%;
+  transition: 0.5 ease;
+  opacity: 0;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.comment {
+  font-size: 12px;
+}
+
+.watched-remove button {
+  width: 60px;
+  text-align: center;
+}
