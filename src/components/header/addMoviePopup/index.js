@@ -6,24 +6,24 @@ import { v4 } from "node-uuid";
 
 const AddMovie = (props) => {
   const { register, handleSubmit } = useForm();
-  const dispatch = useDispatch();
 
   const onSubmit = (data, e) => {
     data.id = v4();
     console.log(data);
+    const dispatch = useDispatch();
     dispatch(addMovieToWatchlist(data));
     e.target.reset();
   };
 
   return (
-    <div className="popup-menu">
+    <div className="popup-menu" data-test="popupComponent">
       <div className="form ">
         <div className="f-title">
           <h2>Add a movie!</h2>
         </div>
 
         <div className="container">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} data-test="formComponent">
             <div className="form-group">
               <label>Title</label>
               <input
