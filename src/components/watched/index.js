@@ -7,7 +7,6 @@ import { removeMovieFromWatched } from "../../redux/actions";
 
 const Watched = () => {
   const watchedMovies = useSelector((state) => state.watchedMovies);
-
   const dispatch = useDispatch();
 
   const backToWatchlist = (movie, movieId) => {

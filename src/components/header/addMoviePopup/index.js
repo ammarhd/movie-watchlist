@@ -1,29 +1,36 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addMovieToWatchlist } from "../../../redux/actions";
 import { v4 } from "node-uuid";
+import { checkMovie } from "./checkMovie.js";
 
 const AddMovie = (props) => {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
+  const watchlistMovies = useSelector((state) => state.watchlistMovies);
 
   const onSubmit = (data, e) => {
     data.id = v4();
     console.log(data);
-    const dispatch = useDispatch();
-    dispatch(addMovieToWatchlist(data));
-    e.target.reset();
+    var check = checkMovie(data, watchlistMovies.Watchlist);
+    if (check) {
+      e.target.reset();
+    } else {
+      dispatch(addMovieToWatchlist(data));
+      e.target.reset();
+    }
   };
 
   return (
-    <div className="popup-menu" data-test="popupComponent">
+    <div className="popup-menu">
       <div className="form ">
         <div className="f-title">
           <h2>Add a movie!</h2>
         </div>
 
         <div className="container">
-          <form onSubmit={handleSubmit(onSubmit)} data-test="formComponent">
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label>Title</label>
               <input
