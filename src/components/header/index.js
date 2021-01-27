@@ -24,7 +24,7 @@ const Header = () => {
       <div className=" row mt-4 mb-4">
         <div className="col-4">
           <Link to="/" className="header a">
-            <h1>WatchList</h1>
+            <h1>My WatchList</h1>
           </Link>
         </div>
 
@@ -55,7 +55,7 @@ const Header = () => {
           </span>
         </div>
 
-        <div className="col mt-1">
+        <div className="col-2 mt-1">
           <Button variant="contained" color="secondary" onClick={togglePopup}>
             + ADD
           </Button>
